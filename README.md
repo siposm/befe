@@ -5,6 +5,19 @@
 
 https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFrontendFejlesztes_SiposMiklos_KovacsAndras.pdf 
 
+### Tananyag vázlat
+
+#### 1. hét - JS működés, TS alapok
+- web működése (FE <> BE), hosting, frontend jelentése
+- JS nyelvi jellemzők
+- interpretált vs fordított (vs JIT)
+- imperatív vs deklaratív
+- var probléma (hoisting, TDZ, func/global scope vs block scope)
+- JS engine (call stack, heap)
+- JS runtime (engine, web apis, callback queue)
+- JIT folyamat
+- TS (superset of js, build, ES verziók, npm)
+
 ### Heti bontás
 
 |         | **FRONTEND FIRST**                                                        |   | **BACKEND FIRST**                                                                                       |
