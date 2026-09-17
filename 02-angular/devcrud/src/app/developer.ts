@@ -1,4 +1,4 @@
-import { Guid } from 'guid-typescript'
+import { Guid } from 'guid-typescript' /* npm i guid-typescript */
 
 export class Developer {
   id: string = Guid.create().toString()
