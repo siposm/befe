@@ -39,7 +39,7 @@ Az email mezőre végezzen email cím helyesség ellenőrzést (egy pillanatra e
 
 ### Csapatunk
 
-Hozzon létre egy, a menhelyen dolgozókat bemutató aloldalt (`team` komponens), ami vagy cardokkal vagy táblázattal mutassa be az embereket (profilkép, név, pozíció, email).
+Hozzon létre egy, a menhelyen dolgozókat bemutató aloldalt (`team` komponens), ami vagy cardokkal vagy táblázattal mutassa be az embereket (profilkép, név, pozíció, email). Az email címet href=mailto segítségével állítsa be, így kattintáskor a default levelező megnyílik a kiválasztott címzettel.
 
 A dolgozókat egy osztállyal reprezentálja, ehhez hozza létre a szükséges osztályt a megfelelő tulajdonságokkal.
 
@@ -49,7 +49,9 @@ A komponens .ts részében seed adatokat adjon meg, amiket aztán a .html részb
 
 Hozzon létre egy aloldalt (`animals` komponens), amely a menhelyen található állatokat mutatja be (kép, nem (hím/nőstény), életkor, név).
 
-Az egyes állatnál legyen egy "örökbe fogadom" gomb, amire rányomva megjelenik két input mező, ahol a felhasználó be tudja írni a nevét és telefonszámát. (Egyelőre "elrejtést és megjelenítést" még nem tanultunk, ezért megfelelő, ha ezek az inputok prezisztens módon ott vannak pl. az oldal tetején de jól megkülönböztetve (pl. bootstrap alert dobozban).)
+Az egyes állatnál legyen egy "örökbe fogadom" gomb.
+
+A nézet tetején legyen két input mező (név és telefonszám) bootstrap alert info dobozban, amit a felhasználó tölt ki, valamint egy harmadik disabled állapotban. Ez utóbbit a user nem tudja szerkeszteni, viszont az értéke az alapján legyen beállítva, hogy a felhasználó melyik állathoz tartozó gombra nyomott rá. Legyen ennek a doboznak az alján egy gomb ("Örökbefogadás indítása"), amire kattintva mondjuk egy email küldésre kerülne a menhely számára -- azonban ehelyett most szimplán csak az inputok értékei legyenek resetelve.
 
 Az állatokat egy osztállyal reprezentálja, ehhez hozza létre a szükséges osztályt, valamint ezek alapján a seed adatokat az adott komponens .ts részében.
 
