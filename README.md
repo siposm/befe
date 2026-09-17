@@ -18,6 +18,15 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - JIT folyamat
 - TS (superset of js, build, ES verziók, npm)
 
+#### 2. hét - Angular alapok
+- keretrendszerek elődjei (jQuery, AJAX)
+- SPA vs MPA
+- lib vs framework
+- virtual DOM és change detection technika
+- adatkötés
+- komponensek
+- routing
+
 ### Heti bontás
 
 |         | **FRONTEND FIRST**                                                        |   | **BACKEND FIRST**                                                                                       |
