@@ -1,0 +1,11 @@
+.finished {
+	padding: 10px;
+	color: green;
+	background-color: rgb(210, 249, 210);
+}
+
+.default {
+	padding: 10px;
+	color: blue;
+	background-color: rgb(213, 213, 248);
+}

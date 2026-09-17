@@ -1,0 +1,14 @@
+<h1>Hello Angular</h1>
+<input type="text" placeholder="Todo szövege..." [(ngModel)]="newTodo.content">
+<br>
+<button (click)="add()">Hozzáad</button>
+<hr>
+<div *ngFor="let item of todos">
+	<p (click)="mark(item)" [ngClass]="item.done ? 'finished' : 'default'">
+		{{ item.content }}
+	</p>
+</div>
+<hr>
+<!-- @for (item of todos; track $index) {
+	<p>{{ item }}</p>
+} -->
