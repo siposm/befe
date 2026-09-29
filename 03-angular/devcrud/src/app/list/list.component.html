@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let dev of developers">
+    <tr *ngFor="let dev of service.developers">
       <td>{{ dev.name }}</td>
       <td>{{ dev.job }}</td>
       <td>{{ dev.age }}</td>
@@ -17,7 +17,7 @@
       <td>
         <button
           class="btn btn-sm btn-danger me-1"
-          (click)="deleteDeveloper(dev)"
+          (click)="delete(dev)"
         >
           Del
         </button>

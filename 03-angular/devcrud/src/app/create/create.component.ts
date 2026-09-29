@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Developer } from '../developer'
 import { Router } from '@angular/router'
+import { DeveloperService } from '../services/developer.service'
 
 @Component({
   selector: 'app-create',
@@ -12,23 +13,14 @@ export class CreateComponent {
   developer: Developer
   router: Router
 
-  constructor(router: Router) {
+  constructor(router: Router, private service: DeveloperService) {
     this.router = router
     this.developer = new Developer()
   }
 
   save() {
-    // load
-    let jsonArray = JSON.parse(localStorage.getItem("developersDB") ?? "[]")
-    let developers = Object.values(jsonArray).map((x) =>
-      Object.assign(new Developer(), x),
-    )
-
-    // add new item
-    developers.push(this.developer)
-
-    // save
-    localStorage.setItem("developersDB", JSON.stringify(developers))
+		// save via service
+    this.service.create(this.developer)
 
     // redirect
     this.router.navigate(["list"])

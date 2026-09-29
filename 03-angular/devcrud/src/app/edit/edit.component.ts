@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Developer } from '../developer';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DeveloperService } from '../services/developer.service';
 
 @Component({
   selector: 'app-edit',
@@ -11,25 +12,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditComponent {
   developerToEdit: Developer = new Developer()
 
-  constructor(public router: Router, route : ActivatedRoute) {
+  constructor(public router: Router, route : ActivatedRoute, private service: DeveloperService) {
 		route.params.subscribe(x => {
       let id = x["id"]
-      let developers = this.load()
-      this.developerToEdit = developers.find(d => d.id === id) as Developer
+      this.developerToEdit = this.service.findById(id)
     })
   }
 
-  load() : Developer[] {
-    let jsonArray = JSON.parse(localStorage.getItem("developersDB") ?? "[]")
-    return Object.values(jsonArray).map(x => Object.assign(new Developer(), x))
-  }
-
   save() {
-    let developers = this.load()
-    let index = developers.findIndex(x => x.id === this.developerToEdit.id)
-    developers[index] = this.developerToEdit
-    localStorage.setItem("developersDB", JSON.stringify(developers))
+		// update via service
+		this.service.update(this.developerToEdit)
 
+		// redirect
     this.router.navigate(["list"])
   }
 }
