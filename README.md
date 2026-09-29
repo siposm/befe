@@ -7,7 +7,7 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 
 ### Tananyag vázlat
 
-#### 1. hét - JS működés, TS alapok
+#### 1. alkalom - JS működés, TS alapok
 - web működése (FE <> BE), hosting, frontend jelentése
 - JS nyelvi jellemzők
 - interpretált vs fordított (vs JIT)
@@ -18,7 +18,7 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - JIT folyamat
 - TS (superset of js, build, ES verziók, npm)
 
-#### 2. hét - Angular alapok
+#### 2. alkalom - Angular alapok
 - keretrendszerek elődjei (jQuery, AJAX)
 - SPA vs MPA
 - lib vs framework
@@ -26,6 +26,11 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - adatkötés
 - komponensek
 - routing
+
+#### 3. alkalom - Angular szolgáltatások, API hívások
+- szolgáltatások
+- direktívák
+- depdendency injection
 
 ### Heti bontás
 
