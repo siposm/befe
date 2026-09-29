@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
 		FormsModule /* !!! */
   ],
-  providers: [],
+  providers: [
+		provideHttpClient() /* !!! */
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

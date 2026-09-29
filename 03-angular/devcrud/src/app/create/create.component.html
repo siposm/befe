@@ -1,11 +1,16 @@
 <div class="input-group mb-3">
+    <span class="input-group-text">ID</span>
+    <input type="text" disabled class="form-control" [(ngModel)]="developer.id">
+</div>
+
+<div class="input-group mb-3">
     <span class="input-group-text">Name</span>
     <input type="text" class="form-control" [(ngModel)]="developer.name">
 </div>
 
 <div class="input-group mb-3">
-    <span class="input-group-text">Age</span>
-    <input type="number" class="form-control" [(ngModel)]="developer.age">
+    <span class="input-group-text">Email</span>
+    <input type="text" class="form-control" [(ngModel)]="developer.email">
 </div>
 
 <div class="input-group mb-3">
@@ -14,8 +19,23 @@
 </div>
 
 <div class="input-group mb-3">
+    <span class="input-group-text">Age</span>
+    <input type="number" class="form-control" [(ngModel)]="developer.age">
+</div>
+
+<div class="input-group mb-3">
     <span class="input-group-text">Salary</span>
     <input type="number" class="form-control" [(ngModel)]="developer.salary">
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text">Image URL</span>
+    <input type="text" class="form-control" [(ngModel)]="developer.image">
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text">Skills (comma separated)</span>
+    <input type="text" class="form-control" [(ngModel)]="developer.skillsAsString">
 </div>
 
 <button class="btn btn-success" (click)="save()">Create developer</button>
