@@ -1,0 +1,6 @@
+<h2 class="display-6 mb-5">Login</h2>
+<input class="form-control mb-1" type="text" placeholder="Username" [(ngModel)]="user.username">
+<input class="form-control mb-1" type="password" placeholder="Password" [(ngModel)]="user.password">
+<button class="btn btn-success" (click)="authService.login(user)">
+	Login
+</button>

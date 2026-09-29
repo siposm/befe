@@ -11,10 +11,17 @@
                     <a class="nav-link active active" aria-current="page" routerLink="/list">List devs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="/create">Create dev</a>
+                    <a class="nav-link active" routerLink="/create" *ngIf="authService.isLoggedIn()">Create dev</a>
+                </li>
+								<li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="!authService.isLoggedIn()">
+                        Login
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="/edit">Edit dev</a>
+                    <a class="nav-link active" aria-current="page" (click)="authService.logout()" style="cursor: pointer;" *ngIf="authService.isLoggedIn()">
+                        Logout
+                    </a>
                 </li>
             </ul>
         </div>
