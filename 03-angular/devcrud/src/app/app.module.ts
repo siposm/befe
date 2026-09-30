@@ -13,6 +13,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     EditComponent,
     LoginComponent,
     HomepageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
