@@ -11,6 +11,8 @@ import { EditComponent } from './edit/edit.component';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LoginComponent } from './login/login.component';
     ListComponent,
     CreateComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    HomepageComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
