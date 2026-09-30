@@ -12,17 +12,25 @@ import { DeveloperService } from '../services/developer.service'
 export class CreateComponent {
   developer: Developer
   router: Router
+	showAlert: boolean = false
 
   constructor(router: Router, private service: DeveloperService) {
     this.router = router
     this.developer = new Developer()
   }
 
-  save() {
+  save(): void {
 		// save via service
     this.service.create(this.developer)
 
     // redirect
     this.router.navigate(["list"])
   }
+
+	showExplanation(): void {
+		this.showAlert = true
+		setTimeout(() => {
+			this.showAlert = false
+		}, 5000)
+	}
 }
