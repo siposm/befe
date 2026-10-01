@@ -28,9 +28,11 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - routing
 
 #### 3. alkalom - Angular szolgáltatások, API hívások
-- szolgáltatások
 - direktívák
+- szolgáltatások
 - depdendency injection
+- SOLID
+- singleton
 
 ### Heti bontás
 
