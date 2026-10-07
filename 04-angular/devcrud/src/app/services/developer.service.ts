@@ -1,28 +1,31 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Developer } from '../models/developer';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeveloperService {
 
+	// Service feladata:
+	// - HTTP kérés felépítése
+	// - endpointok
+	// - adatok transzformálása
+	// - közös API/error logika
+
+	// Component feladata:
+	// - mikor indítsuk el
+	// - siker után mit mutassunk
+	// - navigáció
+	// - UI frissítése
+
 	developers: Developer[] = []
+	http = inject(HttpClient)
 
-  constructor(private http: HttpClient) {
-		this.load()
-	}
-
-	load(): void {
-		this.http.get<Developer[]>(environment.developerGetApiUrl).subscribe(x => {
-			this.developers = x.map(x => Object.assign(new Developer(), x))
-		})
-
-		// A <Developer[]> rész csak a TS szintjén kezeli az elemeket így, futásidőben plain
-		// object-ként lesznek kezelve, ezért logolva {} vs Developer{} eltérés lesz.
-		// Ha osztállyal dolgozunk, akkor érdemes object.assign-nal vagy hasonlóval kezelni (feltételezve, hogy vannak metódusai stb.).
-		// Ha csak sima adatstruktúraként van használva, jó az interfész is, és akkor nem kell assign.
+	getDevelopers(): Observable<Developer[]> {
+		return this.http.get<Developer[]>(environment.developerGetApiUrl)
 	}
 
 	create(developer: Developer): void {

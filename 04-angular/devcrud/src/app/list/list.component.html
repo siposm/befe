@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let dev of service.developers">
+    <tr *ngFor="let dev of developers$ | async">
       <td>
 				<img src="{{ dev.image }}" alt="profile-image" width="40px" class="rounded-circle mx-2">
 				{{ dev.name }}

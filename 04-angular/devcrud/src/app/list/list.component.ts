@@ -11,6 +11,7 @@ import { DeveloperService } from '../services/developer.service';
 export class ListComponent {
 
 	service = inject(DeveloperService)
+	developers$ = this.service.getDevelopers()
 
 	delete(developer : Developer): void {
     this.service.delete(developer)
