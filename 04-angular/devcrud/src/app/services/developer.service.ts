@@ -42,23 +42,10 @@ export class DeveloperService {
 		return this.http.put<void>(environment.developerUpdateApiUrl, developer)
 	}
 
-	delete(developer: Developer): void {
-		this.http.delete(environment.developerDeleteApiUrl, {
+	delete(developer: Developer): Observable<void> {
+		return this.http.delete<void>(environment.developerDeleteApiUrl, {
       headers: new HttpHeaders({"Content-Type": "application/json"}),
-      body: {
-        id: developer.id
-      }
-    }).subscribe({
-      next: (response) => {
-        console.log("::SUCCESS::")
-        console.log("DELETE request result: ", response)
-        // delete from local array
-        this.developers = this.developers.filter(x => x.id !== developer.id)
-      },
-      error: (error) => {
-        console.log("::ERROR::")
-        console.log("DELETE request result: ", error)
-      }
+      body: { id: developer.id }
     })
 	}
 }
