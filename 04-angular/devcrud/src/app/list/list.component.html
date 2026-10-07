@@ -20,7 +20,7 @@
       <td>{{ dev.email }}</td>
       <td>{{ dev.job }}</td>
       <td>{{ dev.age }}</td>
-      <td>{{ dev.getFormattedSalary() }}</td>
+      <td>{{ dev.salary| currency:"HUF":"symbol":"1.0-0":"hu-HU" }}</td>
 			<td>
 				<ul>
 					<li *ngFor="let skill of dev.skills">{{ skill }}</li>

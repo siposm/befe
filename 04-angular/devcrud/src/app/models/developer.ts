@@ -10,14 +10,6 @@ export class Developer {
   salary: number | null = null
 	skills: string[] = []
 
-  getFormattedSalary() {
-    return this.salary!.toLocaleString("hu-HU", {
-      style: "currency",
-      currency: "HUF",
-      maximumFractionDigits: 0,
-    })
-  }
-
 	public get skillsAsString(): string {
 		return this.skills.join(',')
 	}

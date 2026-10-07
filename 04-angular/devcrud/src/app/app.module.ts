@@ -15,6 +15,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SkillsComponent } from './skills/skills.component';
 
+// ! for using currency pipe
+import { registerLocaleData } from "@angular/common"
+import localeHu from "@angular/common/locales/hu"
+registerLocaleData(localeHu)
+
 @NgModule({
   declarations: [
     AppComponent,
