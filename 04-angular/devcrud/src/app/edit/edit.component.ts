@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Developer } from '../developer';
+import { Developer } from '../models/developer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeveloperService } from '../services/developer.service';
 

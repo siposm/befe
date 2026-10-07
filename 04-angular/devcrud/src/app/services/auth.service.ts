@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../user';
-import { Token } from '../token';
+import { User } from '../models/user';
+import { Token } from '../models/token';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({

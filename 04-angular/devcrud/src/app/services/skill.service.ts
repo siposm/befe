@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Skill } from '../skill';
+import { Skill } from '../models/skill';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
