@@ -17,10 +17,19 @@ export class CreateComponent {
 
   save(): void {
 		// save via service
-    this.service.create(this.developer)
+    this.service.create(this.developer).subscribe({
+			next: (response) => {
+				console.log("::SUCCESS::")
+				console.log("CREATE request result: ", response)
 
-    // redirect
-    this.router.navigate(["list"])
+				// redirect
+				this.router.navigate(["/list"])
+			},
+			error: (error) => {
+				console.log("::ERROR::")
+				console.log("CREATE request result: ", error)
+			}
+		})
   }
 
 	showExplanation(): void {

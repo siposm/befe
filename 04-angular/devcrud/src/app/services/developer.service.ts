@@ -28,19 +28,8 @@ export class DeveloperService {
 		return this.http.get<Developer[]>(environment.developerGetApiUrl)
 	}
 
-	create(developer: Developer): void {
-		this.http.post(environment.developerCreateApiUrl, developer).subscribe({
-      next: (response) => {
-        console.log("::SUCCESS::")
-        console.log("CREATE request result: ", response)
-        // add to local array
-        this.developers.push(developer)
-      },
-      error: (error) => {
-        console.log("::ERROR::")
-        console.log("CREATE request result: ", error)
-      }
-    })
+	create(developer: Developer): Observable<void> {
+		return this.http.post<void>(environment.developerCreateApiUrl, developer)
 	}
 
 	update(developer: Developer): void {
