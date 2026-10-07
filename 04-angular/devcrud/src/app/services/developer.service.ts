@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Developer } from '../models/developer';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,31 +25,21 @@ export class DeveloperService {
 	http = inject(HttpClient)
 
 	getDevelopers(): Observable<Developer[]> {
-		return this.http.get<Developer[]>(environment.developerGetApiUrl)
+		return this.http
+			.get<Developer[]>(environment.developerGetApiUrl)
+			.pipe(
+				map(data =>
+					data.map(x => Object.assign(new Developer(), x))
+				)
+			)
 	}
 
 	create(developer: Developer): Observable<void> {
 		return this.http.post<void>(environment.developerCreateApiUrl, developer)
 	}
 
-	update(developer: Developer): void {
-		this.http.put(environment.developerUpdateApiUrl, developer).subscribe({
-      next: (response) => {
-        console.log("::SUCCESS::")
-        console.log("UPDATE request result: ", response)
-        // update in local array
-        let index = this.developers.findIndex(x => x.id === developer.id)
-        this.developers[index] = developer
-      },
-      error: (error) => {
-        console.log("::ERROR::")
-        console.log("UPDATE request result: ", error)
-      }
-    })
-	}
-
-	findById(id: string): Developer {
-		return this.developers.find(dev => dev.id === id) as Developer
+	update(developer: Developer): Observable<void> {
+		return this.http.put<void>(environment.developerUpdateApiUrl, developer)
 	}
 
 	delete(developer: Developer): void {
