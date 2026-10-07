@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Developer } from '../developer';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class DeveloperService {
 	}
 
 	load(): void {
-		this.http.get<Developer[]>("https://api.siposm.hu/getDevelopers").subscribe(x => {
+		this.http.get<Developer[]>(environment.developerGetApiUrl).subscribe(x => {
 			this.developers = x.map(x => Object.assign(new Developer(), x))
 		})
 
@@ -25,7 +26,7 @@ export class DeveloperService {
 	}
 
 	create(developer: Developer): void {
-		this.http.post("https://api.siposm.hu/createDeveloper", developer).subscribe({
+		this.http.post(environment.developerCreateApiUrl, developer).subscribe({
       next: (response) => {
         console.log("::SUCCESS::")
         console.log("CREATE request result: ", response)
@@ -40,7 +41,7 @@ export class DeveloperService {
 	}
 
 	update(developer: Developer): void {
-		this.http.put("https://api.siposm.hu/updateDeveloper", developer).subscribe({
+		this.http.put(environment.developerUpdateApiUrl, developer).subscribe({
       next: (response) => {
         console.log("::SUCCESS::")
         console.log("UPDATE request result: ", response)
@@ -60,7 +61,7 @@ export class DeveloperService {
 	}
 
 	delete(developer: Developer): void {
-		this.http.delete("https://api.siposm.hu/deleteDeveloper", {
+		this.http.delete(environment.developerDeleteApiUrl, {
       headers: new HttpHeaders({"Content-Type": "application/json"}),
       body: {
         id: developer.id

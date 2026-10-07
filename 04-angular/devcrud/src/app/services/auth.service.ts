@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { Token } from '../token';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(user: User): void {
-    this.http.post<Token>("https://api.siposm.hu/login", user).subscribe({
+    this.http.post<Token>(environment.loginApiUrl, user).subscribe({
       next: (response) => {
         console.log("::SUCCESS::")
         console.log("LOGIN REQUEST RESULT: ", response)

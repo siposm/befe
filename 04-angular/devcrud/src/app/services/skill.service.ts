@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Skill } from '../skill';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,6 @@ import { Skill } from '../skill';
 export class SkillService {
 
   skills: Skill[] = []
-  apiUrl: string = "https://api.siposm.hu/skill"
   skillToEdit: Skill = { id: "", name: "", description: "" }
 	skillToCreate: Skill = { id: "", name: "", description: "" }
 
@@ -17,7 +17,7 @@ export class SkillService {
   }
 
   load(): void {
-    this.http.get<Skill[]>(this.apiUrl).subscribe(x => this.skills = x)
+    this.http.get<Skill[]>(environment.skillApiUrl).subscribe(x => this.skills = x)
   }
 
 	loadForEdit(skill: Skill): void {
@@ -25,7 +25,7 @@ export class SkillService {
   }
 
   create(): void {
-    this.http.post(this.apiUrl, this.skillToCreate).subscribe({
+    this.http.post(environment.skillApiUrl, this.skillToCreate).subscribe({
       next: (response) => {
         console.log("::SUCCESS::")
         console.log("Create request result:", response)
@@ -45,7 +45,7 @@ export class SkillService {
   }
 
   update(): void {
-    this.http.put(this.apiUrl, this.skillToEdit).subscribe({
+    this.http.put(environment.skillApiUrl, this.skillToEdit).subscribe({
       next: (response) => {
         console.log("::SUCCESS::")
         console.log("UPDATE REQUEST RESULT:", response)
@@ -61,7 +61,7 @@ export class SkillService {
   }
 
   delete(skill: Skill): void {
-    this.http.delete(this.apiUrl, {
+    this.http.delete(environment.skillApiUrl, {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("auth-token")
