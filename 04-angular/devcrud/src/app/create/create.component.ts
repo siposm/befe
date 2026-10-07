@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { Developer } from '../models/developer'
 import { Router } from '@angular/router'
 import { DeveloperService } from '../services/developer.service'
@@ -10,14 +10,10 @@ import { DeveloperService } from '../services/developer.service'
   styleUrl: './create.component.css',
 })
 export class CreateComponent {
-  developer: Developer
-  router: Router
-	showAlert: boolean = false
-
-  constructor(router: Router, private service: DeveloperService) {
-    this.router = router
-    this.developer = new Developer()
-  }
+  developer: Developer = new Developer()
+  showAlert: boolean = false
+	router = inject(Router)
+	service = inject(DeveloperService)
 
   save(): void {
 		// save via service

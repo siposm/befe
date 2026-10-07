@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Developer } from '../models/developer';
 import { DeveloperService } from '../services/developer.service';
 
@@ -9,11 +9,8 @@ import { DeveloperService } from '../services/developer.service';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-	constructor(public service: DeveloperService) { }
 
-	// get developers(): Developer[] {
-	// 	return this.service.developers
-	// }
+	service = inject(DeveloperService)
 
 	delete(developer : Developer): void {
     this.service.delete(developer)

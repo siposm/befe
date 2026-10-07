@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Developer } from '../models/developer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeveloperService } from '../services/developer.service';
@@ -11,9 +11,12 @@ import { DeveloperService } from '../services/developer.service';
 })
 export class EditComponent {
   developerToEdit: Developer = new Developer()
+	service = inject(DeveloperService)
+	router = inject(Router)
+	route = inject(ActivatedRoute)
 
-  constructor(public router: Router, route : ActivatedRoute, private service: DeveloperService) {
-		route.params.subscribe(x => {
+  constructor() {
+		this.route.params.subscribe(x => {
       let id = x["id"]
       this.developerToEdit = this.service.findById(id)
     })

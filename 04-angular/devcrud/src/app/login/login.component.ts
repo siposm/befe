@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { User } from '../models/user';
 
@@ -10,10 +10,10 @@ import { User } from '../models/user';
 })
 export class LoginComponent {
 
+	authService = inject(AuthService)
+
 	user: User = {
 		username: "",
 		password: ""
 	}
-
-	constructor(public authService: AuthService) { }
 }

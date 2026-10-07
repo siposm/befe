@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SkillService } from '../services/skill.service';
 
 @Component({
@@ -8,5 +8,5 @@ import { SkillService } from '../services/skill.service';
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent {
-	constructor(public service: SkillService) { }
+	service = inject(SkillService)
 }

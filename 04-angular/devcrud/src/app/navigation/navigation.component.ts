@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,5 +8,5 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent {
-	constructor(public authService: AuthService) { }
+	authService = inject(AuthService)
 }
