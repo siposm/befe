@@ -34,6 +34,17 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - SOLID
 - singleton
 
+#### 4. alkalom - Angular további haladó eszközök
+- env variables
+- service inject
+- pipes
+- stateful vs stateless
+- rxjs
+- observables
+- tesztelés
+- viewchild
+- content projection
+
 ### Heti bontás
 
 |         | **FRONTEND FIRST**                                                        |   | **BACKEND FIRST**                                                                                       |

@@ -1,0 +1,12 @@
+<app-card *ngFor="let item of movies">
+  <div title>
+    <u>
+      <i>
+        {{ item.title }}
+      </i>
+    </u>
+    <span *ngIf="item.year > 2010" style="background-color: aqua;">*</span>
+  </div>
+  <div year>{{item.year}}</div>
+  <div intro>{{item.intro}}</div>
+</app-card>
