@@ -41,6 +41,7 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - stateful vs stateless
 - rxjs
 - observables
+- behaviour subject
 - tesztelés
 - viewchild
 - content projection
