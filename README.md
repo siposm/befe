@@ -1,4 +1,4 @@
-![banner](assets/banner.png)
+![banner](assets/banner.webp)
 
 # Backend és Frontend fejlesztés
 ## Mérnökinformatikus - Szoftver specializáció
