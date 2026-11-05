@@ -17,7 +17,7 @@ export class AppComponent {
 
 	add() {
 		if (this.newTodo.content.startsWith("!")) {
-			this.newTodo.done = true
+			this.newTodo.important = true
 		}
 
 		this.todos.push(this.newTodo)
@@ -33,6 +33,7 @@ export class AppComponent {
 
 export class Todo {
 	content: string = ""
+	important: boolean = false
 	done: boolean = false
 
 	constructor(content: string = "", done: boolean = false) {
