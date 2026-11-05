@@ -6,6 +6,12 @@
 <div *ngFor="let item of todos">
 	<p (click)="mark(item)" [ngClass]="item.done ? 'finished' : 'default'">
 		{{ item.content }}
+		<!-- <span *ngIf="item.done" class="finished">
+			{{ item.content }}
+		</span>
+		<span *ngIf="!item.done" class="default">
+			{{ item.content }}
+		</span> -->
 	</p>
 </div>
 <hr>
